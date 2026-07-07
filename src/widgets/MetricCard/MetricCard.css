@@ -1,0 +1,80 @@
+.metric-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(125, 231, 255, 0.22);
+  border-radius: 8px;
+  padding: clamp(14px, 1.1vw, 20px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 58%), rgba(10, 21, 38, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.metric-card::after {
+  position: absolute;
+  right: -28px;
+  bottom: -38px;
+  width: 116px;
+  height: 116px;
+  content: '';
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.12;
+}
+
+.metric-card--cyan {
+  color: var(--cyan);
+}
+
+.metric-card--green {
+  color: var(--green);
+}
+
+.metric-card--amber {
+  color: var(--amber);
+}
+
+.metric-card--rose {
+  color: var(--rose);
+}
+
+.metric-card--violet {
+  color: var(--violet);
+}
+
+.metric-card__label,
+.metric-card__footer {
+  color: var(--text-soft);
+}
+
+.metric-card__label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.metric-card__value {
+  display: block;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+  color: var(--text-main);
+  font-size: clamp(1.55rem, 2vw, 2.35rem);
+  line-height: 1.1;
+}
+
+.metric-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.78rem;
+}
+
+.metric-card__delta {
+  color: var(--green);
+  font-weight: 800;
+}
+
+.metric-card__delta.is-down {
+  color: var(--rose);
+}

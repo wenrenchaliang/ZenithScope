@@ -1,0 +1,99 @@
+.dashboard-page {
+  position: relative;
+  min-height: 100vh;
+  padding: clamp(14px, 1.5vw, 24px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(52, 213, 255, 0.14), transparent 26%),
+    radial-gradient(circle at 84% 12%, rgba(167, 139, 250, 0.12), transparent 23%),
+    linear-gradient(145deg, #050816 0%, #071321 44%, #0c1020 100%);
+}
+
+.dashboard-page__backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image:
+    linear-gradient(rgba(125, 231, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 231, 255, 0.06) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.16));
+}
+
+.dashboard-page--center {
+  display: grid;
+  place-items: center;
+}
+
+.dashboard-page__fallback {
+  position: relative;
+  max-width: min(520px, 92vw);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px 28px;
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.dashboard-page__metrics {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.1vw, 18px);
+  margin-top: 14px;
+}
+
+.dashboard-page__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(420px, 1.52fr) minmax(300px, 0.98fr);
+  gap: clamp(12px, 1.1vw, 18px);
+  margin-top: clamp(12px, 1.1vw, 18px);
+}
+
+.dashboard-page__column {
+  display: grid;
+  min-width: 0;
+  gap: clamp(12px, 1.1vw, 18px);
+}
+
+.dashboard-page__column--left,
+.dashboard-page__column--right {
+  grid-template-rows: minmax(300px, 1.05fr) minmax(260px, 0.95fr);
+}
+
+.dashboard-page__column--center {
+  grid-template-rows: minmax(468px, 1.32fr) minmax(168px, 0.48fr);
+}
+
+@media (max-width: 1180px) {
+  .dashboard-page {
+    overflow: auto;
+  }
+
+  .dashboard-page__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-page__column,
+  .dashboard-page__column--left,
+  .dashboard-page__column--right,
+  .dashboard-page__column--center {
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-page__metrics {
+    grid-template-columns: 1fr;
+  }
+}

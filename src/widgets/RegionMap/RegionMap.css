@@ -1,0 +1,66 @@
+.region-map-panel .panel__body {
+  height: calc(100% - 62px);
+}
+
+.region-map {
+  position: relative;
+  min-height: clamp(386px, 48vh, 620px);
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(125, 231, 255, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(125, 231, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(125, 231, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 50% 48%, rgba(52, 213, 255, 0.18), transparent 35%),
+    rgba(3, 12, 23, 0.52);
+  background-size:
+    46px 46px,
+    46px 46px,
+    auto,
+    auto;
+}
+
+.region-map__chart {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(386px, 48vh, 620px);
+}
+
+.region-map__summary {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: min(440px, calc(100% - 28px));
+}
+
+.region-map__summary div {
+  min-width: 0;
+  border: 1px solid rgba(125, 231, 255, 0.16);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: rgba(5, 12, 24, 0.74);
+}
+
+.region-map__summary span {
+  display: block;
+  color: var(--text-soft);
+  font-size: 0.74rem;
+}
+
+.region-map__summary strong {
+  display: block;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+  color: var(--text-main);
+  font-size: clamp(1.05rem, 1.3vw, 1.42rem);
+}
+
+@media (max-width: 640px) {
+  .region-map__summary {
+    grid-template-columns: 1fr;
+  }
+}
