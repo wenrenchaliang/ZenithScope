@@ -10,38 +10,21 @@
   padding: clamp(12px, 1.15vw, 20px);
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% -10%, rgba(92, 198, 255, 0.2), transparent 38%),
-    radial-gradient(circle at 82% 16%, rgba(158, 167, 255, 0.12), transparent 24%),
-    radial-gradient(circle at 16% 84%, rgba(51, 215, 255, 0.1), transparent 28%),
-    linear-gradient(155deg, #030918 0%, #06162f 48%, #020711 100%);
+    linear-gradient(180deg, rgba(147, 197, 253, 0.06) 0%, transparent 30%),
+    linear-gradient(155deg, #06111f 0%, #081a2e 50%, #102a43 100%);
 }
 
 .dashboard-page__backdrop {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.78;
+  opacity: 0.46;
   background:
-    radial-gradient(
-      circle at 50% 48%,
-      transparent 0 18%,
-      rgba(91, 213, 255, 0.08) 18.2% 18.45%,
-      transparent 18.7% 100%
-    ),
-    radial-gradient(
-      circle at 50% 48%,
-      transparent 0 29%,
-      rgba(247, 210, 122, 0.06) 29.2% 29.35%,
-      transparent 29.6% 100%
-    ),
-    linear-gradient(rgba(101, 240, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(101, 240, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(147, 197, 253, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 197, 253, 0.038) 1px, transparent 1px);
   background-size:
-    100% 100%,
-    100% 100%,
-    56px 56px,
     56px 56px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.18));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12));
 }
 
 .dashboard-page::before,
@@ -53,28 +36,27 @@
 }
 
 .dashboard-page::before {
-  opacity: 0.38;
+  opacity: 0.72;
   background-image:
-    radial-gradient(circle, rgba(238, 248, 255, 0.7) 0 1px, transparent 1.4px),
-    radial-gradient(circle, rgba(101, 240, 255, 0.45) 0 1px, transparent 1.3px);
+    linear-gradient(152deg, transparent 0 54%, rgba(30, 64, 175, 0.2) 54.2% 62%, transparent 62.4%),
+    linear-gradient(28deg, transparent 0 58%, rgba(14, 56, 102, 0.22) 58.2% 66%, transparent 66.4%),
+    linear-gradient(180deg, transparent, rgba(147, 197, 253, 0.035) 46%, transparent 78%);
   background-position:
-    18px 28px,
-    90px 120px;
+    0 42%,
+    0 58%,
+    0 0;
   background-size:
-    132px 116px,
-    214px 188px;
+    100% 100%,
+    100% 100%,
+    100% 100%;
 }
 
 .dashboard-page::after {
-  opacity: 0.18;
-  background: linear-gradient(
-    115deg,
-    transparent 0 42%,
-    rgba(101, 240, 255, 0.42) 49%,
-    transparent 56% 100%
-  );
-  transform: translateX(-64%);
-  animation: zenith-scan 14s linear infinite;
+  opacity: 0.78;
+  background:
+    radial-gradient(ellipse at 46% 18%, rgba(248, 251, 255, 0.045), transparent 46%),
+    radial-gradient(ellipse at 18% 80%, rgba(96, 165, 250, 0.06), transparent 36%),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.045), transparent 24% 78%, rgba(34, 211, 238, 0.045));
 }
 
 .dashboard-page--center {
@@ -130,16 +112,6 @@
 
 .dashboard-page__column--center {
   grid-template-rows: minmax(0, 1.72fr) minmax(0, 0.68fr);
-}
-
-@keyframes zenith-scan {
-  from {
-    transform: translateX(-74%);
-  }
-
-  to {
-    transform: translateX(74%);
-  }
 }
 
 @media (max-width: 1180px) {

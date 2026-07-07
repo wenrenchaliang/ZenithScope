@@ -3,14 +3,21 @@
   min-width: 0;
   min-height: clamp(88px, 5.7vw, 110px);
   overflow: hidden;
-  border: 1px solid rgba(101, 240, 255, 0.24);
+  border: 1px solid rgba(147, 197, 253, 0.16);
   border-radius: 8px;
   padding: clamp(10px, 0.85vw, 14px);
   background:
-    linear-gradient(135deg, rgba(101, 240, 255, 0.12), transparent 46%),
-    linear-gradient(180deg, rgba(18, 55, 101, 0.62), rgba(6, 18, 38, 0.84));
-  box-shadow: var(--panel-glow);
+    linear-gradient(180deg, rgba(248, 251, 255, 0.055), rgba(248, 251, 255, 0.018)),
+    radial-gradient(ellipse at 88% 108%, color-mix(in srgb, currentColor 13%, transparent), transparent 52%),
+    repeating-linear-gradient(105deg, transparent 0 20px, rgba(248, 251, 255, 0.012) 20px 21px),
+    var(--color-bg-panel);
+  box-shadow: var(--panel-shadow);
   isolation: isolate;
+  backdrop-filter: blur(15px) saturate(112%);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .metric-card::before,
@@ -21,42 +28,32 @@
 }
 
 .metric-card::before {
-  inset: 0;
-  opacity: 0.4;
-  background:
-    linear-gradient(
-        90deg,
-        currentColor 0 42px,
-        transparent 42px calc(100% - 42px),
-        currentColor calc(100% - 42px)
-      )
-      top / 100% 1px no-repeat,
-    linear-gradient(
-        90deg,
-        currentColor 0 28px,
-        transparent 28px calc(100% - 28px),
-        currentColor calc(100% - 28px)
-      )
-      bottom / 100% 1px no-repeat;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: currentColor;
+  opacity: 0.74;
 }
 
 .metric-card::after {
-  right: -28px;
-  bottom: -38px;
-  width: 96px;
-  height: 96px;
-  border: 1px solid color-mix(in srgb, currentColor 62%, transparent);
-  border-radius: 50%;
-  opacity: 0.18;
-  box-shadow: inset 0 0 22px currentColor;
+  inset: 0;
+  opacity: 0.1;
+  background:
+    linear-gradient(135deg, currentColor, transparent 34%),
+    radial-gradient(ellipse at 74% 66%, currentColor, transparent 46%);
+}
+
+.metric-card:hover {
+  border-color: color-mix(in srgb, currentColor 34%, rgba(147, 197, 253, 0.16));
+  box-shadow: var(--panel-shadow-hover);
+  transform: translateY(-1px);
 }
 
 .metric-card--cyan {
-  color: var(--color-accent-cyan);
+  color: var(--color-primary);
 }
 
 .metric-card--green {
-  color: var(--color-accent-green);
+  color: var(--color-accent-cyan);
 }
 
 .metric-card--amber {
@@ -68,7 +65,7 @@
 }
 
 .metric-card--violet {
-  color: var(--color-accent-violet);
+  color: var(--color-accent-blue);
 }
 
 .metric-card__label,
@@ -78,7 +75,7 @@
 
 .metric-card__label {
   display: block;
-  font-size: clamp(0.76rem, 0.78vw, 0.86rem);
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -87,12 +84,10 @@
   display: block;
   margin-top: clamp(4px, 0.56vh, 7px);
   overflow-wrap: anywhere;
-  color: var(--text-main);
-  font-size: clamp(1.5rem, 2vw, 2.32rem);
+  color: #f8fbff;
+  font-size: 2.06rem;
   line-height: 1.1;
-  text-shadow:
-    0 0 12px rgba(238, 248, 255, 0.1),
-    0 0 20px color-mix(in srgb, currentColor 34%, transparent);
+  text-shadow: none;
 }
 
 .metric-card__footer {

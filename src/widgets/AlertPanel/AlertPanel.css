@@ -9,12 +9,13 @@
   position: relative;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(101, 240, 255, 0.16);
+  border: 1px solid rgba(147, 197, 253, 0.14);
   border-left: 3px solid var(--text-soft);
   border-radius: 8px;
   padding: clamp(5px, 0.5vh, 7px) 9px;
   background:
-    linear-gradient(90deg, rgba(101, 240, 255, 0.065), transparent 72%), rgba(6, 18, 38, 0.58);
+    linear-gradient(90deg, color-mix(in srgb, currentColor 8%, transparent), transparent 72%),
+    rgba(8, 24, 44, 0.54);
 }
 
 .alert-panel__item--critical {
@@ -26,7 +27,7 @@
 }
 
 .alert-panel__item--medium {
-  border-left-color: var(--color-accent-cyan);
+  border-left-color: var(--color-primary);
 }
 
 .alert-panel__item--low {
@@ -39,19 +40,18 @@
   justify-content: space-between;
   gap: 8px;
   color: var(--text-soft);
-  font-size: clamp(0.66rem, 0.68vw, 0.75rem);
+  font-size: 0.72rem;
 }
 
 .alert-panel__top strong {
   color: var(--text-main);
-  text-shadow: 0 0 10px rgba(101, 240, 255, 0.14);
 }
 
 .alert-panel__item h3 {
   margin: clamp(4px, 0.44vh, 6px) 0 0;
   overflow-wrap: anywhere;
   color: var(--text-main);
-  font-size: clamp(0.74rem, 0.76vw, 0.86rem);
+  font-size: 0.82rem;
   line-height: 1.28;
 }
 
@@ -59,6 +59,6 @@
   margin: 3px 0 0;
   overflow-wrap: anywhere;
   color: var(--text-soft);
-  font-size: clamp(0.66rem, 0.68vw, 0.76rem);
+  font-size: 0.72rem;
   line-height: 1.28;
 }
