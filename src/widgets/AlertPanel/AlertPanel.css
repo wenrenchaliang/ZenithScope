@@ -1,6 +1,8 @@
 .alert-panel {
   display: grid;
-  gap: clamp(6px, 0.65vh, 8px);
+  gap: clamp(5px, 0.5vh, 7px);
+  height: 100%;
+  min-height: 0;
 }
 
 .alert-panel__item {
@@ -10,7 +12,7 @@
   border: 1px solid rgba(101, 240, 255, 0.16);
   border-left: 3px solid var(--text-soft);
   border-radius: 8px;
-  padding: clamp(6px, 0.62vh, 8px) 10px;
+  padding: clamp(5px, 0.5vh, 7px) 9px;
   background:
     linear-gradient(90deg, rgba(101, 240, 255, 0.065), transparent 72%), rgba(6, 18, 38, 0.58);
 }
@@ -46,7 +48,7 @@
 }
 
 .alert-panel__item h3 {
-  margin: clamp(5px, 0.58vh, 7px) 0 0;
+  margin: clamp(4px, 0.44vh, 6px) 0 0;
   overflow-wrap: anywhere;
   color: var(--text-main);
   font-size: clamp(0.74rem, 0.76vw, 0.86rem);
@@ -54,7 +56,7 @@
 }
 
 .alert-panel__item p {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   overflow-wrap: anywhere;
   color: var(--text-soft);
   font-size: clamp(0.66rem, 0.68vw, 0.76rem);

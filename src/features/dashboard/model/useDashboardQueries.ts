@@ -13,7 +13,7 @@ const dashboardQueryKeys = {
 };
 
 export function useDashboardQueries(refreshEnabled: boolean) {
-  const refetchInterval = refreshEnabled ? 30_000 : false;
+  const refetchInterval = refreshEnabled ? 2_000 : false;
 
   const [overview, trends, regions, alerts, resources, timeline] = useQueries({
     queries: [

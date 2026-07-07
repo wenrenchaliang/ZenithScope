@@ -34,14 +34,14 @@ export function TrendChart({ trends }: TrendChartProps) {
         yAxis: [
           {
             type: 'value',
-            name: '事件',
+            name: '访问',
             nameTextStyle: { color: '#8fa8c5' },
             splitLine: { lineStyle: { color: 'rgba(101, 240, 255, 0.1)' } },
             axisLabel: { color: '#8fa8c5' },
           },
           {
             type: 'value',
-            name: '告警',
+            name: '任务',
             nameTextStyle: { color: '#8fa8c5' },
             splitLine: { show: false },
             axisLabel: { color: '#8fa8c5' },
@@ -49,7 +49,7 @@ export function TrendChart({ trends }: TrendChartProps) {
         ],
         series: [
           {
-            name: '事件量',
+            name: '访问量',
             type: 'line',
             smooth: true,
             symbol: 'circle',
@@ -78,7 +78,7 @@ export function TrendChart({ trends }: TrendChartProps) {
             data: trends.map((point) => point.events),
           },
           {
-            name: '告警',
+            name: '任务',
             type: 'bar',
             yAxisIndex: 1,
             barWidth: 8,
@@ -104,8 +104,8 @@ export function TrendChart({ trends }: TrendChartProps) {
   );
 
   return (
-    <Panel title="近 24 小时事件趋势" eyebrow="Trend">
-      <BaseEChart className="trend-chart" option={option} ariaLabel="近24小时事件趋势图" />
+    <Panel title="实时访问与任务趋势" eyebrow="Trend">
+      <BaseEChart className="trend-chart" option={option} ariaLabel="实时访问与任务趋势图" />
     </Panel>
   );
 }

@@ -1,11 +1,11 @@
 .metric-card {
   position: relative;
   min-width: 0;
-  min-height: clamp(116px, 7.4vw, 142px);
+  min-height: clamp(88px, 5.7vw, 110px);
   overflow: hidden;
   border: 1px solid rgba(101, 240, 255, 0.24);
   border-radius: 8px;
-  padding: clamp(12px, 1vw, 18px);
+  padding: clamp(10px, 0.85vw, 14px);
   background:
     linear-gradient(135deg, rgba(101, 240, 255, 0.12), transparent 46%),
     linear-gradient(180deg, rgba(18, 55, 101, 0.62), rgba(6, 18, 38, 0.84));
@@ -43,8 +43,8 @@
 .metric-card::after {
   right: -28px;
   bottom: -38px;
-  width: 116px;
-  height: 116px;
+  width: 96px;
+  height: 96px;
   border: 1px solid color-mix(in srgb, currentColor 62%, transparent);
   border-radius: 50%;
   opacity: 0.18;
@@ -85,10 +85,10 @@
 
 .metric-card__value {
   display: block;
-  margin-top: clamp(6px, 0.7vh, 10px);
+  margin-top: clamp(4px, 0.56vh, 7px);
   overflow-wrap: anywhere;
   color: var(--text-main);
-  font-size: clamp(1.55rem, 2.15vw, 2.55rem);
+  font-size: clamp(1.5rem, 2vw, 2.32rem);
   line-height: 1.1;
   text-shadow:
     0 0 12px rgba(238, 248, 255, 0.1),
@@ -99,7 +99,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: clamp(8px, 1vh, 12px);
+  margin-top: clamp(5px, 0.65vh, 8px);
   font-size: 0.78rem;
 }
 

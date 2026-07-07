@@ -1,7 +1,9 @@
 .event-timeline {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(8px, 0.85vw, 10px);
+  gap: clamp(7px, 0.7vw, 9px);
+  height: 100%;
+  min-height: 0;
 }
 
 .event-timeline__item {
@@ -10,7 +12,7 @@
   overflow: hidden;
   border: 1px solid rgba(101, 240, 255, 0.16);
   border-radius: 8px;
-  padding: clamp(7px, 0.7vw, 10px);
+  padding: clamp(6px, 0.6vw, 8px);
   background:
     linear-gradient(135deg, rgba(101, 240, 255, 0.07), transparent 58%), rgba(6, 18, 38, 0.56);
 }
@@ -19,7 +21,7 @@
   display: block;
   width: 26px;
   height: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
   content: '';
   border-radius: 999px;
   background: currentColor;
@@ -49,7 +51,7 @@
 }
 
 .event-timeline h3 {
-  margin: 5px 0 0;
+  margin: 4px 0 0;
   overflow-wrap: anywhere;
   color: var(--text-main);
   font-size: clamp(0.76rem, 0.78vw, 0.86rem);
@@ -57,7 +59,7 @@
 }
 
 .event-timeline p {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   color: var(--text-soft);
   font-size: 0.76rem;
 }

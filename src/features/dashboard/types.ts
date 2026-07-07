@@ -1,6 +1,14 @@
 export type SystemStatus = 'nominal' | 'warning' | 'critical';
 
-export type MetricKey = 'devicesOnline' | 'eventsToday' | 'activeAlerts' | 'throughput';
+export type MetricKey =
+  | 'devicesOnline'
+  | 'eventsToday'
+  | 'activeAlerts'
+  | 'throughput'
+  | 'visitsToday'
+  | 'realtimeTasks'
+  | 'activeLearners'
+  | 'systemHealth';
 
 export type MetricItem = {
   key: MetricKey;

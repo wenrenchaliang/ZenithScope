@@ -1,13 +1,15 @@
 .resource-gauge {
   display: grid;
-  gap: clamp(7px, 0.72vh, 10px);
+  gap: clamp(5px, 0.55vh, 8px);
+  height: 100%;
+  min-height: 0;
 }
 
 .resource-gauge__item {
   min-width: 0;
   border: 1px solid rgba(101, 240, 255, 0.16);
   border-radius: 8px;
-  padding: clamp(7px, 0.72vh, 9px) 10px;
+  padding: clamp(5px, 0.55vh, 8px) 9px;
   background:
     linear-gradient(135deg, rgba(101, 240, 255, 0.06), transparent 56%), rgba(6, 18, 38, 0.56);
 }
@@ -45,7 +47,7 @@
 
 .resource-gauge__meter {
   height: 8px;
-  margin: 7px 0 5px;
+  margin: 5px 0 4px;
   overflow: hidden;
   border-radius: 999px;
   background: rgba(101, 240, 255, 0.09);

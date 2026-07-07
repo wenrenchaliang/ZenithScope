@@ -9,8 +9,8 @@ type EventTimelineProps = {
 
 export function EventTimeline({ events }: EventTimelineProps) {
   return (
-    <Panel title="最近事件动态" eyebrow="Timeline">
-      <div className="event-timeline" aria-label="最近事件动态">
+    <Panel title="实时动态" eyebrow="Timeline">
+      <div className="event-timeline" aria-label="实时动态">
         {events.map((event) => (
           <article
             key={event.id}

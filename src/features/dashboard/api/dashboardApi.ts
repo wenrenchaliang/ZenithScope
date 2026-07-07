@@ -29,4 +29,23 @@ export const dashboardApi = {
   getTimeline() {
     return httpClient.get<TimelineEvent[]>(endpoints.dashboard.timeline);
   },
+  async getDashboardData() {
+    const [overview, trends, regions, alerts, resources, timeline] = await Promise.all([
+      dashboardApi.getOverview(),
+      dashboardApi.getTrends(),
+      dashboardApi.getRegions(),
+      dashboardApi.getAlerts(),
+      dashboardApi.getResources(),
+      dashboardApi.getTimeline(),
+    ]);
+
+    return {
+      overview,
+      trends,
+      regions,
+      alerts,
+      resources,
+      timeline,
+    };
+  },
 };

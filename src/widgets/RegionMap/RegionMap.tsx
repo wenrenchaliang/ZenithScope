@@ -27,7 +27,7 @@ export function RegionMap({ regions }: RegionMapProps) {
             }
 
             const value = data.value as [number, number, number, number];
-            return `${data.name ?? '区域链路'}<br/>风险指数：${value[2]}<br/>事件：${value[3]}`;
+            return `${data.name ?? '数据链路'}<br/>活跃指数：${value[2]}<br/>互动量：${value[3]}`;
           },
         },
         xAxis: {
@@ -64,7 +64,7 @@ export function RegionMap({ regions }: RegionMapProps) {
             })),
           },
           {
-            name: '区域风险',
+            name: '中枢节点',
             type: 'effectScatter',
             coordinateSystem: 'cartesian2d',
             zlevel: 2,
@@ -115,20 +115,20 @@ export function RegionMap({ regions }: RegionMapProps) {
   const totalIncidents = regions.reduce((sum, region) => sum + region.incidentCount, 0);
 
   return (
-    <Panel title="全域态势感知" eyebrow="Situation" className="region-map-panel">
+    <Panel title="天顶数据中枢" eyebrow="Data Hub" className="region-map-panel">
       <div className="region-map">
-        <BaseEChart className="region-map__chart" option={option} ariaLabel="全域区域态势图" />
-        <div className="region-map__summary" aria-label="区域态势摘要">
+        <BaseEChart className="region-map__chart" option={option} ariaLabel="天顶数据中枢节点图" />
+        <div className="region-map__summary" aria-label="天顶数据中枢摘要">
           <div>
-            <span>接入设备</span>
+            <span>访问总量</span>
             <strong>{totalDevices.toLocaleString('zh-CN')}</strong>
           </div>
           <div>
-            <span>活跃事件</span>
+            <span>互动任务</span>
             <strong>{totalIncidents}</strong>
           </div>
           <div>
-            <span>最高风险</span>
+            <span>最高活跃</span>
             <strong>{maxRisk}</strong>
           </div>
         </div>
