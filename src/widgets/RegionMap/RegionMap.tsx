@@ -51,11 +51,11 @@ export function RegionMap({ regions }: RegionMapProps) {
               show: true,
               period: 4,
               trailLength: 0.25,
-              color: '#34d5ff',
+              color: '#65f0ff',
               symbolSize: 4,
             },
             lineStyle: {
-              color: 'rgba(52, 213, 255, 0.28)',
+              color: 'rgba(101, 240, 255, 0.32)',
               width: 1,
               curveness: 0.18,
             },
@@ -77,22 +77,24 @@ export function RegionMap({ regions }: RegionMapProps) {
               color: (params: unknown) => {
                 const risk = Number((params as { value: number[] }).value[2]);
                 if (risk >= 85) {
-                  return '#ff667c';
+                  return '#ff6f8e';
                 }
                 if (risk >= 72) {
-                  return '#f6c95c';
+                  return '#f7d27a';
                 }
-                return '#4ade80';
+                return '#65f7c7';
               },
-              shadowBlur: 18,
-              shadowColor: 'rgba(52, 213, 255, 0.45)',
+              shadowBlur: 22,
+              shadowColor: 'rgba(101, 240, 255, 0.5)',
             },
             label: {
               show: true,
               formatter: '{b}',
               position: 'right',
-              color: '#f5fbff',
+              color: '#f3fbff',
               fontWeight: 700,
+              textShadowBlur: 8,
+              textShadowColor: 'rgba(101, 240, 255, 0.35)',
             },
             data: regions.map((region) => ({
               name: region.name,

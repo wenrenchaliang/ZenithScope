@@ -1,4 +1,4 @@
 .trend-chart {
   width: 100%;
-  height: clamp(224px, 26vh, 320px);
+  height: clamp(270px, 24vw, 340px);
 }

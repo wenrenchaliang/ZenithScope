@@ -1,45 +1,74 @@
 .metric-card {
   position: relative;
   min-width: 0;
+  min-height: clamp(116px, 7.4vw, 142px);
   overflow: hidden;
-  border: 1px solid rgba(125, 231, 255, 0.22);
+  border: 1px solid rgba(101, 240, 255, 0.24);
   border-radius: 8px;
-  padding: clamp(14px, 1.1vw, 20px);
+  padding: clamp(12px, 1vw, 18px);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 58%), rgba(10, 21, 38, 0.86);
-  box-shadow: var(--shadow);
+    linear-gradient(135deg, rgba(101, 240, 255, 0.12), transparent 46%),
+    linear-gradient(180deg, rgba(18, 55, 101, 0.62), rgba(6, 18, 38, 0.84));
+  box-shadow: var(--panel-glow);
+  isolation: isolate;
+}
+
+.metric-card::before,
+.metric-card::after {
+  position: absolute;
+  pointer-events: none;
+  content: '';
+}
+
+.metric-card::before {
+  inset: 0;
+  opacity: 0.4;
+  background:
+    linear-gradient(
+        90deg,
+        currentColor 0 42px,
+        transparent 42px calc(100% - 42px),
+        currentColor calc(100% - 42px)
+      )
+      top / 100% 1px no-repeat,
+    linear-gradient(
+        90deg,
+        currentColor 0 28px,
+        transparent 28px calc(100% - 28px),
+        currentColor calc(100% - 28px)
+      )
+      bottom / 100% 1px no-repeat;
 }
 
 .metric-card::after {
-  position: absolute;
   right: -28px;
   bottom: -38px;
   width: 116px;
   height: 116px;
-  content: '';
-  border: 1px solid currentColor;
+  border: 1px solid color-mix(in srgb, currentColor 62%, transparent);
   border-radius: 50%;
-  opacity: 0.12;
+  opacity: 0.18;
+  box-shadow: inset 0 0 22px currentColor;
 }
 
 .metric-card--cyan {
-  color: var(--cyan);
+  color: var(--color-accent-cyan);
 }
 
 .metric-card--green {
-  color: var(--green);
+  color: var(--color-accent-green);
 }
 
 .metric-card--amber {
-  color: var(--amber);
+  color: var(--color-accent-gold);
 }
 
 .metric-card--rose {
-  color: var(--rose);
+  color: var(--color-danger);
 }
 
 .metric-card--violet {
-  color: var(--violet);
+  color: var(--color-accent-violet);
 }
 
 .metric-card__label,
@@ -49,32 +78,36 @@
 
 .metric-card__label {
   display: block;
-  font-size: 0.84rem;
+  font-size: clamp(0.76rem, 0.78vw, 0.86rem);
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .metric-card__value {
   display: block;
-  margin-top: 8px;
+  margin-top: clamp(6px, 0.7vh, 10px);
   overflow-wrap: anywhere;
   color: var(--text-main);
-  font-size: clamp(1.55rem, 2vw, 2.35rem);
+  font-size: clamp(1.55rem, 2.15vw, 2.55rem);
   line-height: 1.1;
+  text-shadow:
+    0 0 12px rgba(238, 248, 255, 0.1),
+    0 0 20px color-mix(in srgb, currentColor 34%, transparent);
 }
 
 .metric-card__footer {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: clamp(8px, 1vh, 12px);
   font-size: 0.78rem;
 }
 
 .metric-card__delta {
-  color: var(--green);
+  color: var(--color-accent-green);
   font-weight: 800;
 }
 
 .metric-card__delta.is-down {
-  color: var(--rose);
+  color: var(--color-danger);
 }

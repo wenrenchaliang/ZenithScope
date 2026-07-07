@@ -11,31 +11,60 @@ type BaseEChartProps = {
 export function BaseEChart({ option, className, ariaLabel }: BaseEChartProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const chartRef = useRef<ECharts | null>(null);
+  const optionRef = useRef(option);
 
   useEffect(() => {
-    if (!containerRef.current) {
+    optionRef.current = option;
+
+    const container = containerRef.current;
+    if (!container || !chartRef.current) {
       return;
     }
 
-    chartRef.current = echarts.init(containerRef.current, undefined, {
-      renderer: 'canvas',
-    });
+    const { width, height } = container.getBoundingClientRect();
+    if (width > 0 && height > 0) {
+      chartRef.current.setOption(option, true);
+    }
+  }, [option]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const ensureChart = () => {
+      const { width, height } = container.getBoundingClientRect();
+      if (width <= 0 || height <= 0) {
+        return;
+      }
+
+      if (!chartRef.current) {
+        chartRef.current = echarts.init(container, undefined, {
+          renderer: 'canvas',
+        });
+      }
+
+      chartRef.current.resize();
+      chartRef.current.setOption(optionRef.current, true);
+    };
 
     const resizeObserver = new ResizeObserver(() => {
-      chartRef.current?.resize();
+      ensureChart();
     });
-    resizeObserver.observe(containerRef.current);
+    resizeObserver.observe(container);
+    ensureChart();
 
     return () => {
       resizeObserver.disconnect();
-      chartRef.current?.dispose();
+      try {
+        chartRef.current?.dispose();
+      } catch {
+        // ECharts can throw while disposing a zero-sized canvas during rapid viewport changes.
+      }
       chartRef.current = null;
     };
   }, []);
-
-  useEffect(() => {
-    chartRef.current?.setOption(option, true);
-  }, [option]);
 
   return <div ref={containerRef} className={className} role="img" aria-label={ariaLabel} />;
 }

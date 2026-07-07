@@ -1,31 +1,34 @@
 .alert-panel {
   display: grid;
-  gap: 10px;
+  gap: clamp(6px, 0.65vh, 8px);
 }
 
 .alert-panel__item {
+  position: relative;
   min-width: 0;
-  border: 1px solid rgba(157, 179, 200, 0.15);
+  overflow: hidden;
+  border: 1px solid rgba(101, 240, 255, 0.16);
   border-left: 3px solid var(--text-soft);
   border-radius: 8px;
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.04);
+  padding: clamp(6px, 0.62vh, 8px) 10px;
+  background:
+    linear-gradient(90deg, rgba(101, 240, 255, 0.065), transparent 72%), rgba(6, 18, 38, 0.58);
 }
 
 .alert-panel__item--critical {
-  border-left-color: var(--rose);
+  border-left-color: var(--color-danger);
 }
 
 .alert-panel__item--high {
-  border-left-color: var(--amber);
+  border-left-color: var(--color-accent-gold);
 }
 
 .alert-panel__item--medium {
-  border-left-color: var(--cyan);
+  border-left-color: var(--color-accent-cyan);
 }
 
 .alert-panel__item--low {
-  border-left-color: var(--green);
+  border-left-color: var(--color-accent-green);
 }
 
 .alert-panel__top {
@@ -34,24 +37,26 @@
   justify-content: space-between;
   gap: 8px;
   color: var(--text-soft);
-  font-size: 0.75rem;
+  font-size: clamp(0.66rem, 0.68vw, 0.75rem);
 }
 
 .alert-panel__top strong {
   color: var(--text-main);
+  text-shadow: 0 0 10px rgba(101, 240, 255, 0.14);
 }
 
 .alert-panel__item h3 {
-  margin: 7px 0 0;
+  margin: clamp(5px, 0.58vh, 7px) 0 0;
   overflow-wrap: anywhere;
   color: var(--text-main);
-  font-size: 0.9rem;
-  line-height: 1.35;
+  font-size: clamp(0.74rem, 0.76vw, 0.86rem);
+  line-height: 1.28;
 }
 
 .alert-panel__item p {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   overflow-wrap: anywhere;
   color: var(--text-soft);
-  font-size: 0.78rem;
+  font-size: clamp(0.66rem, 0.68vw, 0.76rem);
+  line-height: 1.28;
 }
