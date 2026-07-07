@@ -10,29 +10,30 @@
   position: relative;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(101, 240, 255, 0.16);
+  border: 1px solid rgba(147, 197, 253, 0.14);
   border-radius: 8px;
   padding: clamp(6px, 0.6vw, 8px);
   background:
-    linear-gradient(135deg, rgba(101, 240, 255, 0.07), transparent 58%), rgba(6, 18, 38, 0.56);
+    linear-gradient(135deg, color-mix(in srgb, currentColor 9%, transparent), transparent 58%),
+    rgba(8, 24, 44, 0.54);
 }
 
 .event-timeline__item::before {
   display: block;
   width: 26px;
-  height: 3px;
+  height: 2px;
   margin-bottom: 7px;
   content: '';
   border-radius: 999px;
-  background: currentColor;
+  background: linear-gradient(90deg, currentColor, color-mix(in srgb, currentColor 22%, transparent), transparent);
 }
 
 .event-timeline__item--ingest {
-  color: var(--color-accent-cyan);
+  color: var(--color-primary);
 }
 
 .event-timeline__item--dispatch {
-  color: var(--color-accent-violet);
+  color: var(--color-accent-blue);
 }
 
 .event-timeline__item--recover {
@@ -54,7 +55,7 @@
   margin: 4px 0 0;
   overflow-wrap: anywhere;
   color: var(--text-main);
-  font-size: clamp(0.76rem, 0.78vw, 0.86rem);
+  font-size: 0.82rem;
   line-height: 1.26;
 }
 
