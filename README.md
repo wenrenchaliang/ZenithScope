@@ -4,9 +4,9 @@ ZenithScope｜天顶之眼是一个教学型数据可视化大屏项目，用纯
 
 ## 项目预览
 
-![ZenithScope 天顶之眼](docs/screenshots/dashboard-1920x1080.png)
+![ZenithScope 天顶之眼](docs/screenshots/dashboard-1920x1080.png?v=20260707-blue)
 
-当前界面采用“天顶星穹科技蓝”视觉风格，包含深色大屏背景、HUD 面板、实时指标、ECharts 图表和模拟数据刷新效果。截图文件位于 `docs/screenshots/dashboard-1920x1080.png`。
+当前界面采用“蓝色现代数据指挥台”视觉风格，包含深蓝玻璃背景、克制的数据面板、实时指标、ECharts 图表和模拟数据刷新效果。截图文件位于 `docs/screenshots/dashboard-1920x1080.png`。
 
 ## 项目简介
 
