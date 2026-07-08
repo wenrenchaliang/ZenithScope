@@ -17,8 +17,8 @@ const severityLabel: Record<AlertItem['severity'], string> = {
 
 export function AlertPanel({ alerts }: AlertPanelProps) {
   return (
-    <Panel title="实时告警" eyebrow="Alerts" action={<span>{alerts.length} 条</span>}>
-      <div className="alert-panel" aria-label="实时告警列表">
+    <Panel title="指标异常告警" eyebrow="Alerts" action={<span>{alerts.length} 条</span>}>
+      <div className="alert-panel" aria-label="指标异常告警列表">
         {sortAlertsBySeverity(alerts).map((alert) => (
           <article
             key={alert.id}

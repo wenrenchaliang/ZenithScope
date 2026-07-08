@@ -27,7 +27,7 @@ export function RegionMap({ regions }: RegionMapProps) {
             }
 
             const value = data.value as [number, number, number, number];
-            return `${data.name ?? '数据链路'}<br/>活跃指数：${value[2]}<br/>互动量：${value[3]}`;
+            return `${data.name ?? '监控主机'}<br/>风险指数：${value[2]}<br/>CPU峰值：${value[3]}%`;
           },
         },
         xAxis: {
@@ -64,7 +64,7 @@ export function RegionMap({ regions }: RegionMapProps) {
             })),
           },
           {
-            name: '中枢节点',
+            name: '监控主机',
             type: 'effectScatter',
             coordinateSystem: 'cartesian2d',
             zlevel: 2,
@@ -112,23 +112,26 @@ export function RegionMap({ regions }: RegionMapProps) {
   );
 
   const totalDevices = regions.reduce((sum, region) => sum + region.onlineDevices, 0);
-  const totalIncidents = regions.reduce((sum, region) => sum + region.incidentCount, 0);
+  const averageCpuPeak =
+    regions.length > 0
+      ? Math.round(regions.reduce((sum, region) => sum + region.incidentCount, 0) / regions.length)
+      : 0;
 
   return (
-    <Panel title="天顶数据中枢" eyebrow="Data Hub" className="region-map-panel">
+    <Panel title="机房主机态势" eyebrow="Host Topology" className="region-map-panel">
       <div className="region-map">
-        <BaseEChart className="region-map__chart" option={option} ariaLabel="天顶数据中枢节点图" />
-        <div className="region-map__summary" aria-label="天顶数据中枢摘要">
+        <BaseEChart className="region-map__chart" option={option} ariaLabel="机房主机态势图" />
+        <div className="region-map__summary" aria-label="机房主机态势摘要">
           <div>
-            <span>访问总量</span>
+            <span>采样总量</span>
             <strong>{totalDevices.toLocaleString('zh-CN')}</strong>
           </div>
           <div>
-            <span>互动任务</span>
-            <strong>{totalIncidents}</strong>
+            <span>CPU峰值均值</span>
+            <strong>{averageCpuPeak}%</strong>
           </div>
           <div>
-            <span>最高活跃</span>
+            <span>最高风险</span>
             <strong>{maxRisk}</strong>
           </div>
         </div>

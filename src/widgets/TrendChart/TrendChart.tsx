@@ -37,7 +37,7 @@ export function TrendChart({ trends }: TrendChartProps) {
         yAxis: [
           {
             type: 'value',
-            name: '访问',
+            name: 'CPU%',
             nameGap: 10,
             nameTextStyle: { color: '#B6C7DD', align: 'left', padding: [0, 0, 0, -6] },
             splitLine: { lineStyle: { color: 'rgba(147, 197, 253, 0.1)' } },
@@ -45,7 +45,7 @@ export function TrendChart({ trends }: TrendChartProps) {
           },
           {
             type: 'value',
-            name: '任务',
+            name: '磁盘%',
             nameGap: 10,
             nameTextStyle: { color: '#B6C7DD', align: 'right', padding: [0, -6, 0, 0] },
             splitLine: { show: false },
@@ -54,7 +54,7 @@ export function TrendChart({ trends }: TrendChartProps) {
         ],
         series: [
           {
-            name: '访问量',
+            name: 'CPU使用率',
             type: 'line',
             smooth: true,
             symbol: 'circle',
@@ -81,7 +81,7 @@ export function TrendChart({ trends }: TrendChartProps) {
             data: trends.map((point) => point.events),
           },
           {
-            name: '任务',
+            name: '磁盘利用率',
             type: 'bar',
             yAxisIndex: 1,
             barWidth: 8,
@@ -107,8 +107,8 @@ export function TrendChart({ trends }: TrendChartProps) {
   );
 
   return (
-    <Panel title="实时访问与任务趋势" eyebrow="Trend">
-      <BaseEChart className="trend-chart" option={option} ariaLabel="实时访问与任务趋势图" />
+    <Panel title="最新日 CPU 与磁盘趋势" eyebrow="Trend">
+      <BaseEChart className="trend-chart" option={option} ariaLabel="最新日 CPU 与磁盘趋势图" />
     </Panel>
   );
 }

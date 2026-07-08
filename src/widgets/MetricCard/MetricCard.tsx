@@ -8,7 +8,7 @@ type MetricCardProps = {
 };
 
 function getMetricValue(metric: MetricItem) {
-  if (metric.key === 'throughput') {
+  if (metric.key === 'throughput' && metric.unit === 'GB/s') {
     return formatThroughput(metric.value);
   }
 
@@ -26,7 +26,7 @@ export function MetricCard({ metric }: MetricCardProps) {
         <span className={metric.delta >= 0 ? 'metric-card__delta' : 'metric-card__delta is-down'}>
           {deltaText}
         </span>
-        <span>较上一周期</span>
+        <span>最新采集日</span>
       </div>
     </article>
   );

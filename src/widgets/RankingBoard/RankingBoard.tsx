@@ -12,8 +12,8 @@ export function RankingBoard({ regions }: RankingBoardProps) {
   const ranked = sortRegionsByRisk(regions);
 
   return (
-    <Panel title="学习节点热度排行" eyebrow="Node Rank">
-      <ol className="ranking-board" aria-label="学习节点热度排行">
+    <Panel title="主机风险排行" eyebrow="Host Rank">
+      <ol className="ranking-board" aria-label="主机风险排行">
         {ranked.map((region, index) => (
           <li key={region.id} className="ranking-board__item">
             <span className="ranking-board__index">{String(index + 1).padStart(2, '0')}</span>

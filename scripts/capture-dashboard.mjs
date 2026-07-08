@@ -44,7 +44,7 @@ async function waitForDashboard(page) {
     timeout: 15_000,
   });
 
-  await page.locator('.dashboard-page__grid').waitFor({
+  await page.locator('.dashboard-page__monitor-grid').waitFor({
     state: 'visible',
     timeout: 15_000,
   });

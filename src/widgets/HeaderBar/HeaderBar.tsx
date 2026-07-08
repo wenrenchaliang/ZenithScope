@@ -36,8 +36,8 @@ export function HeaderBar({ overview }: HeaderBarProps) {
       <div className="header-bar__brand">
         <span className="header-bar__brand-mark">ZS</span>
         <div>
-          <h1>ZenithScope 天顶之眼</h1>
-          <p>教学数据中心 · 实时可视化演示</p>
+          <h1>ZenithScope 主机监控大屏</h1>
+          <p>MySQL8 实时数据 · 中国时区按日汇总</p>
         </div>
       </div>
 

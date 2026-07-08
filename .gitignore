@@ -16,3 +16,5 @@ tsconfig.tsbuildinfo
 .vite-dev.err
 .vite-*.log
 .vite-*.err
+.api-dev.log
+.api-dev.err

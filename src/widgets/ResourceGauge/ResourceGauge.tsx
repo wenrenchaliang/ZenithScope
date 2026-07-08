@@ -11,8 +11,8 @@ type ResourceGaugeProps = {
 
 export function ResourceGauge({ resources }: ResourceGaugeProps) {
   return (
-    <Panel title="资源状态" eyebrow="Resources">
-      <div className="resource-gauge" aria-label="资源状态">
+    <Panel title="资源使用概览" eyebrow="Resources">
+      <div className="resource-gauge" aria-label="资源使用概览">
         {resources.map((resource) => {
           const tone = getResourceTone(resource);
 

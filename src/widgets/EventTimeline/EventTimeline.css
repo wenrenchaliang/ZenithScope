@@ -1,6 +1,6 @@
 .event-timeline {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: clamp(7px, 0.7vw, 9px);
   height: 100%;
   min-height: 0;
